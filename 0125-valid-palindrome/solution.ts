@@ -4,7 +4,7 @@
 // Link: https://leetcode.com/problems/valid-palindrome/description/
 
 // Time complexity: O(n)
-// Space complexity: O(n)
+// Space complexity: O(1)
 
 function isPalindrome(s: string): boolean {
   let left = 0;
