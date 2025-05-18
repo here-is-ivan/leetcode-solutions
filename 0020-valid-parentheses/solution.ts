@@ -6,6 +6,34 @@
 
 // Link: https://leetcode.com/problems/valid-parentheses/description/
 
-// Time complexity: ...
-// Space complexity: ...
+// Time complexity: O(n)
+// Space complexity: O(n)
 
+function isValid(s: string): boolean {
+  const parenthesesPairs = new Map<string, string>();
+  const parenthesesStack: string[] = [];
+
+  parenthesesPairs.set(')', '(');
+  parenthesesPairs.set('}', '{');
+  parenthesesPairs.set(']', '[');
+
+  for (let i = 0; i < s.length; i++) {
+    const currentSymbol = s[i];
+
+    if (parenthesesPairs.has(currentSymbol)) {
+      if (
+        parenthesesStack.length === 0 ||
+        parenthesesStack[parenthesesStack.length - 1] !==
+          parenthesesPairs.get(currentSymbol)
+      ) {
+        return false;
+      } else {
+        parenthesesStack.pop();
+      }
+    } else {
+      parenthesesStack.push(currentSymbol);
+    }
+  }
+
+  return parenthesesStack.length === 0;
+}
