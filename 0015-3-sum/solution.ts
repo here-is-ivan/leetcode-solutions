@@ -1,8 +1,8 @@
 // Description: Given an integer array nums, return all the triplets [nums[i], nums[j], nums[k]] such that i != j, i != k, and j != k, and nums[i] + nums[j] + nums[k] == 0.
 // Link: https://leetcode.com/problems/3sum/description/
 
-// Time complexity: ...
-// Space complexity: ...
+// Time complexity: O(n log n) + O(n²) -> O(n²)
+// Space complexity: O(1)
 
 function threeSum(nums: number[]): number[][] {
   const results: number[][] = [];
